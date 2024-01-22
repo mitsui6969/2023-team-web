@@ -1,3 +1,5 @@
+
+
 name: Deploy to Firebase Hosting on merge
 'on':
   push:
@@ -13,7 +15,7 @@ jobs:
         with:
           node-version: 16
       - name: lint and test
-        run:
+        run: |
           npm install
           npm run lint
           npm run test
