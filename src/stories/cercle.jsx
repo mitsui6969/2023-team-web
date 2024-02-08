@@ -3,6 +3,6 @@ import './cercle.css';
 
 export const cercle = () => {
     return (
-        <div className='orange'>circle</div>
+        <div className='orange'></div>
     )
 }
