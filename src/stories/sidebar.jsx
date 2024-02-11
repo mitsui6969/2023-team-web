@@ -7,7 +7,9 @@ function Sidebar() {
             <ul className='sideList'>
                 {sidebarData.map((value) => {
                     return (
-                        <li>
+                        <li className='row' onClick={()=>{
+                            window.location.pathname = value.link
+                        }}>
                             <div id="icon">{value.title}</div>
                         </li>
                     )
