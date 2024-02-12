@@ -1,7 +1,8 @@
-import React from 'react'
-import { sidebarData } from './sidebarData'
+import React from 'react';
+import './sidebar.css';
+import { sidebarData } from './sidebarData';
 
-function Sidebar() {
+export const Sidebar = () => {
     return (
         <div className='sidebar'>
             <ul className='sideList'>
@@ -19,4 +20,4 @@ function Sidebar() {
     )
 }
 
-export default Sidebar
+// export default Sidebar;
