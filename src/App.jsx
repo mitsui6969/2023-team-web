@@ -4,12 +4,13 @@ import viteLogo from '/vite.svg'
 import './styles/App.css'
 import './styles/global.css'
 import Sidebar from "./stories/sidebar"
+import './stories/sidebar.css'
 
 function App() {
 
   return (
     <>
-      <div className='sidebar'>
+      <div className='App'>
         <Sidebar />
       </div>
 
