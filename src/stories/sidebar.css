@@ -1,7 +1,4 @@
-.App { 
-    height: 100%;
-    width: 100vh;
-}
+
 
 * {
     margin: 0;
@@ -28,4 +25,9 @@
     color: #d4dce5;
     justify-content: center;
     align-items: center;
+}
+
+.sideList .row:hover {
+    cursor: pointer;
+    background-color: cadetblue;
 }
