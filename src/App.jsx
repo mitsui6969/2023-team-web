@@ -3,7 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './styles/App.css'
 import './styles/global.css'
-import Sidebar from "./stories/sidebar.jsx"
+import {Sidebar} from "./stories/sidebar.jsx"
 
 
 function App() {
@@ -14,7 +14,7 @@ function App() {
         <Sidebar />
       </div>
 
-      <div className='hello'>Hello</div>
+      {/* <div className='hello'>Hello</div> */}
     </>
   )
 }

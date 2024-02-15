@@ -2,13 +2,13 @@ import React from 'react';
 import './sidebar.css';
 import { sidebarData } from './sidebarData';
 
-const Sidebar = () => {
+export const Sidebar = () => {
     return (
         <div className='sidebar'>
             <ul className='sideList'>
-                {sidebarData.map((value) => {
+                {sidebarData.map((value, key) => {
                     return (
-                        <li className='row' onClick={()=>{
+                        <li key={key} className='row' onClick={()=>{
                             window.location.pathname = value.link
                         }}>
                             <div id="icon">{value.title}</div>
@@ -19,5 +19,3 @@ const Sidebar = () => {
         </div>
     )
 }
-
-export default Sidebar
