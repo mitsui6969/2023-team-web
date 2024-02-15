@@ -2,7 +2,7 @@ import React from 'react';
 import './sidebar.css';
 import { sidebarData } from './sidebarData';
 
-export const Sidebar = () => {
+const Sidebar = () => {
     return (
         <div className='sidebar'>
             <ul className='sideList'>
@@ -20,4 +20,4 @@ export const Sidebar = () => {
     )
 }
 
-// export default Sidebar;
+export default Sidebar
