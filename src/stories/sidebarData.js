@@ -3,11 +3,11 @@ import React from 'react'
 export const sidebarData = [
     {
         title: "ホーム",
-        link: "/home"
+        link: "/"
     },
     {
         title: "時間割",
-        link: "/class"
+        link: "/timetable"
     },
     {
         title: "カレンダー",
