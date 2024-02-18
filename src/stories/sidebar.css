@@ -10,7 +10,9 @@
     height: 100%;
     width: 250px;
     background-color: rgb(61, 73, 90);
-    display: inline-block;
+    position: fixed;
+    left: 0;
+    top: 50px;
 }
 
 .sideList {

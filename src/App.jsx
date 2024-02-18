@@ -1,7 +1,7 @@
 import { Route, Routes } from 'react-router-dom'
 import './styles/App.css'
 import './styles/global.css'
-import {Sidebar} from "./stories/sidebar.jsx"
+import { Sidebar } from "./stories/sidebar.jsx"
 import { Header } from './stories/Header.jsx'
 
 import { Task } from './task.jsx'
