@@ -21,12 +21,14 @@ function App() {
         <Sidebar />
       </div>
 
-      <Routes>
-        <Route path="/" element={ <Task />} />
-        <Route path="/timetable" element={ <Timetable />} />
-        <Route path="/karender" element={ <Karender />} />
-        <Route path="/*" element={ <NotFound />} />
-      </Routes>
+      <div className='main'>
+        <Routes>
+          <Route path="/" element={ <Task />} />
+          <Route path="/timetable" element={ <Timetable />} />
+          <Route path="/karender" element={ <Karender />} />
+          <Route path="/*" element={ <NotFound />} />
+        </Routes>
+      </div>
 
       {/* <div className='hello'>Hello</div> */}
     </>
