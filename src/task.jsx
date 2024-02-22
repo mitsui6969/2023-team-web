@@ -1,21 +1,40 @@
-import React, { useState } from 'react'
+import React, { useState, useRef } from 'react'
 import './styles/task.css'
+import { v4 as uuidv4 } from 'uuid';
 
 export const Task = () => {
-    const [tasks, setTasks] = useState(["task1", "task2"]);
+    const [tasks, setTasks] = useState([{ id: 1, name: "Task1", completed: false }]);
     
     const Task = ({task}) => {
-        return <div>{task}</div>
+        return (
+                <div>
+                    <label>
+                        < input type='checkbox' checked={task.completed} readOnly />
+                    </label>
+                    {task.name}
+                </div>
+            )
+    }
+
+    const taskNameRef = useRef();
+
+    const handleAddTask = () => {
+        //タスク追加
+        const name = taskNameRef.current.value;
+        setTasks((prevTask) => {
+            return [...prevTask, { id: uuidv4(), name: name, completed: false }]
+        })
+        taskNameRef.current.value;
     }
 
     return (
         <>
             <div>task</div>
-            <input type='text'/>
-            <button className='addButton'>追加</button>
-            <button className='delButton'>削除</button>
+            <input type='text' ref={taskNameRef}/>
+            <button className='addBtn' onClick={handleAddTask}>追加</button>
+            <button className='delBtn'>削除</button>
             <div>残りのタスク:0</div>
-            { tasks.map((task) => <Task task={task} key={task} />) }
+            { tasks.map((task) => <Task task={task} key={task.id} />) }
         </>
     )
 }
