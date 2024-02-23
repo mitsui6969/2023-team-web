@@ -5,11 +5,16 @@ import { v4 as uuidv4 } from 'uuid';
 export const Task = () => {
     const [tasks, setTasks] = useState([{ id: 1, name: "Task1", completed: false }]);
     
-    const Task = ({task}) => {
+    const Task = ({ task, toggleTask }) => {
+        
+        const handleTaskClick = () => {
+            toggleTask(task.id);
+        };
+        
         return (
                 <div>
                     <label>
-                        < input type='checkbox' checked={task.completed} readOnly />
+                        < input type='checkbox' checked={task.completed} readOnly onChange={handleTaskClick} />
                     </label>
                     {task.name}
                 </div>
@@ -27,6 +32,13 @@ export const Task = () => {
         taskNameRef.current.value;
     }
 
+    const toggleTask = (id) => {
+        const newTasks = [...tasks];
+        const task = newTasks.find((task) => task.id === id);
+        task.completed = !task.completed;
+        setTasks(newTasks);
+    }
+
     return (
         <>
             <div>task</div>
@@ -34,7 +46,7 @@ export const Task = () => {
             <button className='addBtn' onClick={handleAddTask}>追加</button>
             <button className='delBtn'>削除</button>
             <div>残りのタスク:0</div>
-            { tasks.map((task) => <Task task={task} key={task.id} />) }
+            { tasks.map((task) => <Task task={task} key={task.id} toggleTask={toggleTask} />) }
         </>
     )
 }
