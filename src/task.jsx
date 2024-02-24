@@ -5,8 +5,7 @@ import { v4 as uuidv4 } from 'uuid';
 export const Task = () => {
     const [tasks, setTasks] = useState([{ id: 1, name: "Task1", completed: false }]);
     
-    const Task = ({ task, toggleTask }) => {
-        
+    const Task = ({ task, toggleTask }) => {       
         const handleTaskClick = () => {
             toggleTask(task.id);
         };
@@ -26,6 +25,9 @@ export const Task = () => {
     const handleAddTask = () => {
         //タスク追加
         const name = taskNameRef.current.value;
+        
+        if (name === "") return; //タスクが未入力のときは追加しない
+
         setTasks((prevTask) => {
             return [...prevTask, { id: uuidv4(), name: name, completed: false }]
         })
@@ -39,15 +41,20 @@ export const Task = () => {
         setTasks(newTasks);
     }
 
+    const handleClear = () => {
+        //タスク削除
+        const newTasks = tasks.filter((task) => !task.completed);
+        setTasks(newTasks);
+    }
+
     return (
         <>
             <div>task</div>
             <input type='text' ref={taskNameRef}/>
             <button className='addBtn' onClick={handleAddTask}>追加</button>
-            <button className='delBtn'>削除</button>
-            <div>残りのタスク:0</div>
+            <button className='delBtn' onClick={handleClear}>削除</button>
+            <div>残りのタスク:{tasks.filter((task) => !task.completed).length}</div>
             { tasks.map((task) => <Task task={task} key={task.id} toggleTask={toggleTask} />) }
         </>
     )
 }
-
