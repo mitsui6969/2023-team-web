@@ -7,7 +7,7 @@ import './Header.css'
 export const Header = () => {
     return (
         <div className='header'>
-            <div className='link'>
+            <div className='links'>
                 <Link to="/">todo</Link>
                 <Link to="/timetable"> 時間割</Link>
                 <Link to="/karender"> カレンダー</Link>
