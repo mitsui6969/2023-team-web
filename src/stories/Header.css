@@ -15,8 +15,17 @@
     right: 10px;
     top: 5px;
     background-color: rgb(164, 174, 185);
+    cursor: pointer;
 }
 
 .links {
     text-align: center;
+}
+
+.icon_open[data-show='show'] {
+    visibility: visible;
+}
+
+.icon_open[data-show='hidden'] {
+    visibility: hidden;
 }
