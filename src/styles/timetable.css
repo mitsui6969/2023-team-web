@@ -1,0 +1,9 @@
+input {
+    border: none;
+    outline: none; /* オプション: 入力フォーカス時の枠も非表示にする */
+    font-size: 1.1em; /* 文字サイズを少し小さくする */
+    text-align: center; /* テキストをセンタリング */
+    box-sizing: border-box; /* テキストボックスの内側に内容を収める */
+    width: calc(100% - 6px);
+
+}
