@@ -3,7 +3,7 @@ import './styles/task.css'
 import { v4 as uuidv4 } from 'uuid';
 
 export const Task = () => {
-    const [tasks, setTasks] = useState([{ id: 1, name: "Task1", completed: false }]);
+    const [tasks, setTasks] = useState([]);
     
     const Task = ({ task, toggleTask }) => {       
         const handleTaskClick = () => {
