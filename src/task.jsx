@@ -16,6 +16,7 @@ export const Task = () => {
                         < input type='checkbox' checked={task.completed} readOnly onChange={handleTaskClick} />
                     </label>
                     {task.name}
+                    <button>削除</button>
                 </div>
             )
     }
