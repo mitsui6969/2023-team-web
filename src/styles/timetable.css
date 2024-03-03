@@ -1,9 +1,26 @@
+table {
+    border-collapse: separate;
+    border-spacing: 10px; /* <th>間の隙間 */
+}
+
+th {
+    border-radius: 5px; /* 角を丸くする */
+    background-color: #D1EFF5; 
+}
+
+td {
+    border-radius: 5px; /* <th>の角を丸くする */
+    background-color: #E2ECEF;
+}
+
 input {
     border: none;
     outline: none; /* オプション: 入力フォーカス時の枠も非表示にする */
     font-size: 1.1em; /* 文字サイズを少し小さくする */
     text-align: center; /* テキストをセンタリング */
     box-sizing: border-box; /* テキストボックスの内側に内容を収める */
-    width: calc(100% - 6px);
-
+    width: 100%; /* テキストボックスの幅を100%に設定 */
+    padding: 5px; /* ボックスの内側の余白 */
+    border-radius: 5px; /* ボックスの角を丸くする */
+    background-color: #E2ECEF;
 }
