@@ -1,53 +1,48 @@
-import React from 'react'
-import './styles/Timetable.css'
+
+import React, { useState } from 'react';
+import './styles/Timetable.css';
 
 export const Timetable = () => {
-    
+const [timetable, setTimetable] = useState([
+    ['', '', '', '', ''], // 月曜日
+    ['', '', '', '', ''], // 火曜日
+    ['', '', '', '', ''], // 水曜日
+    ['', '', '', '', ''], // 木曜日
+    ['', '', '', '', ''], // 金曜日
+]);
 
-    return (
+const handleInputChange = (e, dayIndex, periodIndex) => {
+    const updatedTimetable = [...timetable];
+    updatedTimetable[dayIndex][periodIndex] = e.target.value;
+    setTimetable(updatedTimetable);
+};
+
+return (
     <table border="1" width="60%" height="60%">
+    <thead>
         <tr>
-                <th>月曜日</th>
-                <th>火曜日</th>
-                <th>水曜日</th>
-                <th>木曜日</th>
-                <th>金曜日</th>
+            <th>月曜日</th>
+            <th>火曜日</th>
+            <th>水曜日</th>
+            <th>木曜日</th>
+            <th>金曜日</th>
         </tr>
-        <tr>
-                <th>あ</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
+    </thead>
+    <tbody>
+        {timetable.map((day, dayIndex) => (
+            <tr key={dayIndex}>
+            {day.map((period, periodIndex) => (
+                <td key={periodIndex}>
+                <input
+                    type="text"
+                    value={period}
+                    onChange={(e) => handleInputChange(e, dayIndex, periodIndex)}
+                />
+                </td>
+            ))}
             </tr>
-            <tr>
-                <th>i</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <th>う</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <th>え</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
-            <tr>
-                <th>お</th>
-                <th></th>
-                <th></th>
-                <th></th>
-                <th></th>
-            </tr>
+        ))}
+        </tbody>
     </table>
     );
-}
+};
