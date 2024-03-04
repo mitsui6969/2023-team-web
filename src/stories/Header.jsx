@@ -19,6 +19,10 @@ export const Header = () => {
                 <Link to="/signup"> signup</Link>
                 <Link to="/login"> login</Link>
             </div>
+
+            <div className='icon'>
+                <img src='/icon.png' />
+            </div>
         </div>
     )
 }

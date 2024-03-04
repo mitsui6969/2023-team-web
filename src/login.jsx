@@ -37,6 +37,7 @@ export function Login() {
                     break;
                 default:
                     setErrorMessage('エラーが発生しました。もう一度お試しください。');
+                    console.log(error);
                     break;
             }
         });
