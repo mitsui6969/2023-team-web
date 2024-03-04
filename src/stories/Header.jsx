@@ -26,6 +26,10 @@ export const Header = () => {
     //     doClick && document.addEventListener( 'click', handleClickDocument.current )
     // }, [ doClick ])
 
+    const logsig = () => {
+
+    }
+
     return (
         <div className='header'>
             <div className='links'>
