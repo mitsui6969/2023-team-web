@@ -8,8 +8,9 @@ import { Signup } from './signup.jsx'
 import { Login } from './login.jsx'
 import { Task } from './task.jsx'
 import { Karender } from './karender.jsx'
-import { Timetable } from './timetable.jsx'
+import { Timetable } from './timetableEdit.jsx'
 import NotFound from './NotFound.jsx'
+import { TimetableVew } from './timetableVew.jsx'
 
 function App() {
 
@@ -27,7 +28,8 @@ function App() {
       <div className='main'>
         <Routes>
           <Route path="/" element={ <Task />} />
-          <Route path="/timetable" element={ <Timetable />} />
+          <Route path="/timetable" element={ <TimetableVew />} />
+          <Route path="/timetableEdit" element={ <Timetable />} />
           <Route path="/karender" element={ <Karender />} />
           <Route path="/*" element={ <NotFound />} />
           <Route path="/signup" element={ <Signup /> } />
