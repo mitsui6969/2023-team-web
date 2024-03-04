@@ -5,26 +5,26 @@ import './Header.css'
 
 
 export const Header = () => {
-    const [ doClick , setDoClick ] = useState(false)
+    // const [ doClick , setDoClick ] = useState(false)
 
-    const openIcon = () => setDoClick(true)
+    // const openIcon = () => setDoClick(true)
 
-    const refEle = useRef(null)
+    // const refEle = useRef(null)
 
-    const handleClickDocument = useRef(null)
+    // const handleClickDocument = useRef(null)
 
-    useEffect(() => {
-        handleClickDocument.current = ( e ) => {
-            if( !refEle.current.contains( e.target )) {
-                setDoClick(false)
-                document.removeEventListener( 'click', handleClickDocument.current )
-            }
-        }
-    }, [])
+    // useEffect(() => {
+    //     handleClickDocument.current = ( e ) => {
+    //         if( !refEle.current.contains( e.target )) {
+    //             setDoClick(false)
+    //             document.removeEventListener( 'click', handleClickDocument.current )
+    //         }
+    //     }
+    // }, [])
 
-    useEffect ( () => {
-        doClick && document.addEventListener( 'click', handleClickDocument.current )
-    }, [ doClick ])
+    // useEffect ( () => {
+    //     doClick && document.addEventListener( 'click', handleClickDocument.current )
+    // }, [ doClick ])
 
     const logsig = () => {
 
@@ -40,12 +40,8 @@ export const Header = () => {
                 <Link to="/login"> login</Link>
             </div>
 
-            <div>{ logsig }</div>
-
-            <div className='icon' onClick={ openIcon }></div>
-            <div className='icon_open' data-show={ doClick ? 'show' : 'hidden'}  >
-                <div className='icom_img'>icon</div>
-                <p className='userName'>name</p>
+            <div className='icon'>
+                <img src="icon.png" alt="アイコン" className="icon-image"></img>
             </div>
         </div>
     )

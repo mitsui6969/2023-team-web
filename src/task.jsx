@@ -12,14 +12,14 @@ export const Task = () => {
         };
         
         return (
-                <div>
-                    <label>
-                        < input type='checkbox' checked={task.completed} readOnly onChange={handleTaskClick} />
-                    </label>
-                    {task.name}
-                    <button>削除</button>
-                </div>
-            )
+            <div style={{ display: 'flex', alignItems: 'center' }}>
+                <label style={{ marginRight: '10px' }}>
+                    <input type='checkbox' checked={task.completed} readOnly onChange={handleTaskClick} />
+                </label>
+                <div style={{ marginRight: '50px' }}>{task.name}</div>
+                <button className='delBtn' onClick={handleClear} style={{ marginRight: '10px' }}>削除</button>
+            </div>
+        )
     }
 
     const taskNameRef = useRef();
@@ -51,8 +51,8 @@ export const Task = () => {
 
     return (
         <>
-            <div>task</div>
-            <input type='text' ref={taskNameRef}/>
+            <div>Task</div>
+            <input type='text' ref={taskNameRef} style={{ width: '300px', height: '30px' }} />
             <button className='addBtn' onClick={handleAddTask}>追加</button>
             <button className='delBtn' onClick={handleClear}>削除</button>
             <div>残りのタスク:{tasks.filter((task) => !task.completed).length}</div>
