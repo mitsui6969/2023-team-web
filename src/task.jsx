@@ -12,11 +12,11 @@ export const Task = () => {
         
         return (
             <div style={{ display: 'flex', alignItems: 'center' }}>
+                <button className='delBtn' onClick={handleClear} style={{ marginRight: '10px' }}>削除</button>
                 <label style={{ marginRight: '10px' }}>
                     <input type='checkbox' checked={task.completed} readOnly onChange={handleTaskClick} />
                 </label>
                 <div style={{ marginRight: '50px' }}>{task.name}</div>
-                <button className='delBtn' onClick={handleClear} style={{ marginRight: '10px' }}>削除</button>
             </div>
         )
     }
@@ -32,7 +32,7 @@ export const Task = () => {
         setTasks((prevTask) => {
             return [...prevTask, { id: uuidv4(), name: name, completed: false }]
         })
-        taskNameRef.current.value;
+        taskNameRef.current.value = "";
     }
 
     const toggleTask = (id) => {
