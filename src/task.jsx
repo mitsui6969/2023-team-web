@@ -33,7 +33,7 @@ export const Task = () => {
         setTasks((prevTask) => {
             return [...prevTask, { id: uuidv4(), name: name, completed: false }]
         })
-        taskNameRef.current.value;
+        taskNameRef.current.value = '';
 
         localStorage.setItem('id', 'name')
     }
