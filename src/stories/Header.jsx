@@ -26,6 +26,10 @@ export const Header = () => {
         doClick && document.addEventListener( 'click', handleClickDocument.current )
     }, [ doClick ])
 
+    const logsig = () => {
+
+    }
+
     return (
         <div className='header'>
             <div className='links'>
@@ -35,6 +39,8 @@ export const Header = () => {
                 <Link to="/signup"> signup</Link>
                 <Link to="/login"> login</Link>
             </div>
+
+            <div>{ logsig }</div>
 
             <div className='icon' onClick={ openIcon }></div>
             <div className='icon_open' data-show={ doClick ? 'show' : 'hidden'}  >

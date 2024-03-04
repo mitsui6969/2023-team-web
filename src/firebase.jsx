@@ -1,18 +1,31 @@
-import { initializeApp } from "firebase/app";
+import { initializeApp, getApps } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+import { getFirestore } from 'firebase/firestore'
+import { getAuth } from "firebase/auth";
+import { getStorage } from "firebase/storage"
+import { GoogleAuthProvider } from "firebase/auth";
+import 'firebase/firestore'
 
 const firebaseConfig = {
-    apiKey: import.meta.env.VITE_API_KEY,
-    authDomain: import.meta.env.VITE_AUTH_DOMAIN,
-    databaseURL: import.meta.env.VITE_DATABASE_URL,
-    projectId: import.meta.env.VITE_PROJECT_ID,
-    storageBucket: import.meta.env.VITE_STORAGE_BUCKET,
-    messagingSenderId: import.meta.env.VITE_MESSAGING_SENDER_ID,
-    appId: import.meta.env.VITE_APP_ID,
-    measurementId: import.meta.env.VITE_MEASUREMENT_ID,
+    // apiKey:"AIzaSyBMfzGtUckpFUjiPNgCi678ZkcCJWDCpa4",
+    apiKey: "AIzaSyBMfzGtUckpFUjiPNgCi678ZkcCJWDCpa4",
+    authDomain: "poyo-73304.firebaseapp.com",
+    databaseURL: "https://poyo-73304-default-rtdb.asia-southeast1.firebasedatabase.app",
+    projectId: "poyo-73304",
+    storageBucket: "poyo-73304.appspot.com",
+    messagingSenderId: "1044252825166",
+    appId: "1:1044252825166:web:f5af8e4630d04bad53151f",
+    measurementId: "G-B3K9EF9N6X"
 };
 
-const app = initializeApp(firebaseConfig);
-const analytics = getAnalytics(app);
+let firebaseApp;
+if (!getApps().length){
+    firebaseApp = initializeApp(firebaseConfig);
+}
 
-export default analytics;
+const auth = getAuth(firebaseApp);
+const firestore = getFirestore(firebaseApp);
+const storage = getStorage(firebaseApp);
+const provider = new GoogleAuthProvider();
+
+export { firebaseApp, auth, firestore, storage, provider };

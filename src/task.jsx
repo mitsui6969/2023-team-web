@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const Task = () => {
     const [tasks, setTasks] = useState([]);
+    console.log();
     
     const Task = ({ task, toggleTask }) => {       
         const handleTaskClick = () => {
