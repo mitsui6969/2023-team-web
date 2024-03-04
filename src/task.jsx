@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const Task = () => {
     const [tasks, setTasks] = useState([]);
+    console.log();
     
     const Task = ({ task, toggleTask }) => {       
         const handleTaskClick = () => {
@@ -32,7 +33,9 @@ export const Task = () => {
         setTasks((prevTask) => {
             return [...prevTask, { id: uuidv4(), name: name, completed: false }]
         })
-        taskNameRef.current.value = "";
+        taskNameRef.current.value;
+
+        localStorage.setItem('id', 'name')
     }
 
     const toggleTask = (id) => {
@@ -46,6 +49,7 @@ export const Task = () => {
         //タスク削除
         const newTasks = tasks.filter((task) => !task.completed);
         setTasks(newTasks);
+        localStorage.removeItem('id')
     }
 
     return (

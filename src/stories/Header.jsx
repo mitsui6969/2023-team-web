@@ -5,26 +5,10 @@ import './Header.css'
 
 
 export const Header = () => {
-    // const [ doClick , setDoClick ] = useState(false)
 
-    // const openIcon = () => setDoClick(true)
+    const logsig = () => {
 
-    // const refEle = useRef(null)
-
-    // const handleClickDocument = useRef(null)
-
-    // useEffect(() => {
-    //     handleClickDocument.current = ( e ) => {
-    //         if( !refEle.current.contains( e.target )) {
-    //             setDoClick(false)
-    //             document.removeEventListener( 'click', handleClickDocument.current )
-    //         }
-    //     }
-    // }, [])
-
-    // useEffect ( () => {
-    //     doClick && document.addEventListener( 'click', handleClickDocument.current )
-    // }, [ doClick ])
+    }
 
     return (
         <div className='header'>
@@ -37,7 +21,7 @@ export const Header = () => {
             </div>
 
             <div className='icon'>
-                <img src="icon.png" alt="アイコン" className="icon-image"></img>
+                <img src='/icon.png' />
             </div>
         </div>
     )
