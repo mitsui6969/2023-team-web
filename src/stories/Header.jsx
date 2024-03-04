@@ -37,7 +37,7 @@ export const Header = () => {
             </div>
 
             <div className='icon'>
-                <img src="icon.png" alt="アイコン" className="icon-image"></img>
+                <img src='/icon.png' />
             </div>
         </div>
     )
