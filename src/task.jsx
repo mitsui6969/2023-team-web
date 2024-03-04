@@ -34,6 +34,8 @@ export const Task = () => {
             return [...prevTask, { id: uuidv4(), name: name, completed: false }]
         })
         taskNameRef.current.value;
+
+        localStorage.setItem('id', 'name')
     }
 
     const toggleTask = (id) => {
@@ -47,6 +49,7 @@ export const Task = () => {
         //タスク削除
         const newTasks = tasks.filter((task) => !task.completed);
         setTasks(newTasks);
+        localStorage.removeItem('id')
     }
 
     return (
