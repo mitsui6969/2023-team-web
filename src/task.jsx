@@ -4,6 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 
 export const Task = () => {
 
+
     const [todos, setTodos] = useState([]);
     const [input, setInput] = useState('');
 
@@ -33,7 +34,9 @@ export const Task = () => {
         const name = input.trim();
         const id = uuidv4();
 
+
         if (name === "") return;
+
 
         setTodos((prevTasks) => {
             return [...prevTasks, { id: id, name: name, completed: false }]
